@@ -5,6 +5,7 @@
  */
 package com.mycompany.tqsrecurso;
 
+import java.io.Serializable;
 import java.util.List;
 import javax.persistence.EntityManager;
 
@@ -12,7 +13,7 @@ import javax.persistence.EntityManager;
  *
  * @author gonca
  */
-public abstract class AbstractFacade<T> {
+public abstract class AbstractFacade<T> implements Serializable {
 
     private Class<T> entityClass;
 

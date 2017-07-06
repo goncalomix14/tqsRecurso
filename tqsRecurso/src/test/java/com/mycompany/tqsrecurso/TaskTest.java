@@ -42,30 +42,30 @@ public class TaskTest {
     /**
      * Test of getId method, of class Task.
      */
-    @Ignore
     @org.junit.Test
     public void testGetId() {
         System.out.println("getId");
         Task instance = new Task();
-        Integer expResult = null;
+        instance.setId(2);
+        Integer expResult = 2;
         Integer result = instance.getId();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
      * Test of setId method, of class Task.
      */
-    @Ignore
     @org.junit.Test
     public void testSetId() {
         System.out.println("setId");
-        Integer id = null;
+        Integer id = 2;
         Task instance = new Task();
         instance.setId(id);
+        assertEquals(id,instance.getId());
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**

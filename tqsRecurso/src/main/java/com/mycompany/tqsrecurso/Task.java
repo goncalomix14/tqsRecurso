@@ -23,7 +23,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author gonca
+ * @author gonca lasdsiodfjsdiofjds
  */
 @Entity
 @Table(name = "TASK")

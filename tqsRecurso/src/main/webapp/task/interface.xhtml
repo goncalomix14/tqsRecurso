@@ -11,7 +11,7 @@
         <h:outputScript library="js" name="jsfcrud.js"/>
     </h:head>
 
-    <h:body>
+    <h:body style="background: url(https://turbinehq.com/wp-content/uploads/2016/06/The-perfect-to-do-list.jpg) repeat !important;"><center>
 
         <p:growl id="growl" life="3000" />
 
@@ -19,9 +19,9 @@
             <p:layoutUnit position="north" size="65" header="Gonçalo - Recurso">
                 <h:form id="menuForm">
                     <p:menubar>
-                        <p:menuitem value="Note Keeper" outcome="tqs" icon="ui-icon-close"/>
-                        <p:menuitem value="Profile Management" outcome="EditAccount" icon="ui-icon-close"/>
-                        <p:menuitem value="About Me" outcome="AboutMe" icon="ui-icon-close"/>
+                        <p:menuitem value="Note Keeper" outcome="tqs" icon="ui-icon-disk"/>
+                        <p:menuitem value="Profile Management" outcome="EditAccount" icon="ui-icon-person"/>
+                        <p:menuitem value="About Me" outcome="AboutMe" icon="ui-icon-star"/>
                         <p:menuitem value="Logout" outcome="login" icon="ui-icon-close"/>
                     </p:menubar>
                 </h:form>
@@ -37,6 +37,6 @@
 
         </p:layout>
 
-    </h:body>
+        </center></h:body>
 
 </html>

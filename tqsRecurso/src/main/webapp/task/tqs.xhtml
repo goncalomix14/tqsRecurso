@@ -10,18 +10,18 @@
 
 
         <ui:define name="title">
-            <h:outputText value="#{bundle.ListTaskTitle}"></h:outputText>
+            <h:outputText value="Note Keeper"></h:outputText>
         </ui:define>
 
         <ui:define name="body">
             <h:form id="TaskListForm">
-                <p:panel header="#{bundle.ListTaskTitle}">
+                <p:panel header="Note Keeper">
                     <p:dataTable id="datalist" value="#{taskController.items}" var="item"
                                  selectionMode="single" selection="#{taskController.selected}"
                                  paginator="true"
                                  rowKey="#{item.id}"
-                                 rows="10"
-                                 rowsPerPageTemplate="10,20,30,40,50"
+                                 rows="12"
+                                 rowsPerPageTemplate="12,24,36,48,60"
                                  >
 
                         <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
@@ -66,10 +66,10 @@
                             </h:outputText>
                         </p:column>
                         <f:facet name="footer">
-                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{taskController.prepareCreate}" update=":TaskCreateForm" oncomplete="PF('TaskCreateDialog').show()"/>
-                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":TaskViewForm" oncomplete="PF('TaskViewDialog').show()" disabled="#{empty taskController.selected}"/>
-                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" update=":TaskEditForm" oncomplete="PF('TaskEditDialog').show()" disabled="#{empty taskController.selected}"/>
-                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{taskController.destroy}" update=":growl,datalist" disabled="#{empty taskController.selected}"/>
+                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="New Task" actionListener="#{taskController.prepareCreate}" update=":TaskCreateForm" oncomplete="PF('TaskCreateDialog').show()"/>
+                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="Info" update=":TaskViewForm" oncomplete="PF('TaskViewDialog').show()" disabled="#{empty taskController.selected}"/>
+                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="Change Task" update=":TaskEditForm" oncomplete="PF('TaskEditDialog').show()" disabled="#{empty taskController.selected}"/>
+                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="Delete Task" actionListener="#{taskController.destroy}" update=":growl,datalist" disabled="#{empty taskController.selected}"/>
                         </f:facet>
                     </p:dataTable>
                 </p:panel>

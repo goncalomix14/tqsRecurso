@@ -1,0 +1,67 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# API do Trabalho
+
+O trabalho que efectuei tanto utiliza dados JSON como XML
+
+## Opções para o Author [/questions]
+
+### Ver Opções [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "question": "Prioridade da Tarefa 1?",
+                "published_at": "Tarefa 1: Lavar o Carro",
+                "choices": [
+                    {
+                        "choice": "Baixa",
+                        
+                    }, {
+                        "choice": "Média",
+                        
+                    }, {
+                        "choice": "Alta",
+                    }
+                ]
+            }
+        ]
+
+### Adicionar Opção [POST]
+
+O exemplo demonstrado nesta página é .json, não explicarei xml pois o processo é o mesmo (apenas a linguagem difere).
+
++ Request (application/json)
+
+        {
+            "question": "Prioridade da Tarefa 1?",
+            "choices": [
+                "Baixa",
+                "Média",
+                "Alta"
+            ]
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /questions/2
+
+    + Body
+
+            {
+                "question": "Prioridade da Tarefa 1?",
+                "published_at": "Tarefa 1: Lavar o Carro",
+                "choices": [
+                    {
+                        "choice": "Baixa",
+                    }, {
+                        "choice": "Média",
+                    }, {
+                        "choice": "Alta",
+                    }
+                ]
+            }

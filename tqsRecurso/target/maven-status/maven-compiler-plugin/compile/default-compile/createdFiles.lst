@@ -1,0 +1,11 @@
+com\mycompany\tqsrecurso\Task.class
+com\mycompany\tqsrecurso\TaskController$TaskControllerConverter.class
+com\mycompany\tqsrecurso\TaskController.class
+com\mycompany\tqsrecurso\util\JsfUtil.class
+com\mycompany\tqsrecurso\AbstractFacade.class
+com\mycompany\tqsrecurso\service\AbstractFacade.class
+com\mycompany\tqsrecurso\TaskFacade.class
+com\mycompany\tqsrecurso\service\ApplicationConfig.class
+com\mycompany\tqsrecurso\util\JsfUtil$PersistAction.class
+com\mycompany\tqsrecurso\service\TaskFacadeREST.class
+com\mycompany\tqsrecurso\Task_.class

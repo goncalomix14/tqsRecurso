@@ -23,7 +23,7 @@ public class TaskController implements Serializable {
 
     @EJB
     private com.mycompany.tqsrecurso.TaskFacade ejbFacade;
-    private List<Task> items = null;
+    private List<Task> items;
     private Task selected;
 
     public TaskController() {

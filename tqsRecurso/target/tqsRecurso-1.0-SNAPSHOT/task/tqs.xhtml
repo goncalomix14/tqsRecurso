@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="interface.xhtml">
+
+
+        <ui:define name="title">
+            <h:outputText value="Note Keeper"></h:outputText>
+        </ui:define>
+
+        <ui:define name="body">
+            <h:form id="TaskListForm">
+                <p:panel header="Note Keeper">
+                    <p:dataTable id="datalist" value="#{taskController.items}" var="item"
+                                 selectionMode="single" selection="#{taskController.selected}"
+                                 paginator="true"
+                                 rowKey="#{item.id}"
+                                 rows="12"
+                                 rowsPerPageTemplate="12,24,36,48,60"
+                                 >
+
+                        <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
+                        <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTaskTitle_id}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.id}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTaskTitle_author}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.author}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTaskTitle_title}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.title}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTaskTitle_description}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.description}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTaskTitle_priority}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.priority}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTaskTitle_datelimit}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.datelimit}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </p:column>
+                        <f:facet name="footer">
+                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="New Task" actionListener="#{taskController.prepareCreate}" update=":TaskCreateForm" oncomplete="PF('TaskCreateDialog').show()"/>
+                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="Info" update=":TaskViewForm" oncomplete="PF('TaskViewDialog').show()" disabled="#{empty taskController.selected}"/>
+                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="Change Task" update=":TaskEditForm" oncomplete="PF('TaskEditDialog').show()" disabled="#{empty taskController.selected}"/>
+                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="Delete Task" actionListener="#{taskController.destroy}" update=":growl,datalist" disabled="#{empty taskController.selected}"/>
+                        </f:facet>
+                    </p:dataTable>
+                </p:panel>
+            </h:form>
+
+            <ui:include src="NewTask.xhtml"/>
+            <ui:include src="ChangeTask.xhtml"/>
+            <ui:include src="Info.xhtml"/>
+        </ui:define>
+    </ui:composition>
+
+</html>

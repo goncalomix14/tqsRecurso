@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:h="http://java.sun.com/jsf/html"
+       xmlns:f="http://java.sun.com/jsf/core"
+       xmlns:ui="http://java.sun.com/jsf/facelets"
+       xmlns:p="http://primefaces.org/ui">
+    <f:view contentType="text/html">
+    <h:head>
+        <title>Register</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
+    </h:head>
+        <h:body style="background: url(https://turbinehq.com/wp-content/uploads/2016/06/The-perfect-to-do-list.jpg) repeat !important;"><center>
+           
+            
+
+
+                    <h:form id="logonForm">
+
+
+                        <p:growl id="msg" showDetail="true" life="3000" />
+                        <p:panel header="Register" style="width: 360px;">
+
+                            <h:panelGrid id="logonPanel" columns="2">
+
+                                <h:outputText value="Name " />
+
+                                <p:inputText id="nome" ></p:inputText>
+
+                                <p:spacer></p:spacer>
+                            
+                                <p:message for="nome" ></p:message>
+
+                                <h:outputText value="Password: " />
+
+                                <p:password id="password"></p:password>
+
+                                <p:spacer></p:spacer>
+
+                                <p:message for="password"></p:message>
+
+                                <h:outputText value="Repeat Password: " />
+
+                                <p:password id="repeatPassword" ></p:password>
+
+                                <p:spacer></p:spacer>
+
+                                <p:message for="repeatPassword"></p:message>
+
+                                <h:outputText value="E-Mail: " />
+
+                                <p:inputText id="email" ></p:inputText>
+
+                                <p:spacer></p:spacer>
+
+                                <p:message for="email"></p:message>
+                                
+
+                                <p:spacer></p:spacer>
+                                <p:commandButton value="Procceed" update="logonForm" type="button" onclick="PF('msg').show();" ></p:commandButton>
+                                <p:dialog header="Done!" widgetVar="msg" height="150">
+                                    <h:outputText value="Now you may enter in the APP!" />
+                                    <br />
+                                    <p:commandButton value="OK" onclick="PF('msg').close();" action="tqs"></p:commandButton>
+                                </p:dialog>
+                            </h:panelGrid>
+
+                        </p:panel>
+
+                    </h:form>
+        </center></h:body>
+    </f:view>
+</html>

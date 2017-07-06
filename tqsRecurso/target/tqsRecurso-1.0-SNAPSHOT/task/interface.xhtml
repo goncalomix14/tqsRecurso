@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title><ui:insert name="title">Gonçalo - Recurso</ui:insert></title>
+        <h:outputStylesheet library="css" name="jsfcrud.css"/>
+        <h:outputScript library="js" name="jsfcrud.js"/>
+    </h:head>
+
+    <h:body style="background: url(https://turbinehq.com/wp-content/uploads/2016/06/The-perfect-to-do-list.jpg) repeat !important;"><center>
+
+        <p:growl id="growl" life="3000" />
+
+        <p:layout fullPage="true">
+            <p:layoutUnit position="north" size="65" header="Gonçalo - Recurso">
+                <h:form id="menuForm">
+                    <p:menubar>
+                        <p:menuitem value="Note Keeper" outcome="tqs" icon="ui-icon-disk"/>
+                        <p:menuitem value="Profile Management" outcome="EditAccount" icon="ui-icon-person"/>
+                        <p:menuitem value="About Me" outcome="AboutMe" icon="ui-icon-star"/>
+                        <p:menuitem value="Logout" outcome="login" icon="ui-icon-close"/>
+                    </p:menubar>
+                </h:form>
+            </p:layoutUnit>
+
+            <p:layoutUnit position="south" size="60">
+                <ui:insert name="footer"/>
+            </p:layoutUnit>
+
+            <p:layoutUnit position="center">
+                <ui:insert name="body"/>
+            </p:layoutUnit>
+
+        </p:layout>
+
+        </center></h:body>
+
+</html>

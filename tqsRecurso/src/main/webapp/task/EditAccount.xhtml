@@ -6,7 +6,7 @@
        xmlns:p="http://primefaces.org/ui">
     <f:view contentType="text/html">
     <h:head>
-        <title>Register</title>
+        <title>Edit Account</title>
         <h:outputStylesheet name="css/jsfcrud.css"/>
     </h:head>
         <h:body style="background: url(https://turbinehq.com/wp-content/uploads/2016/06/The-perfect-to-do-list.jpg) repeat !important;"><center>
@@ -18,13 +18,13 @@
 
 
                         <p:growl id="msg" showDetail="true" life="3000" />
-                        <p:panel header="Register" style="width: 360px;">
+                        <p:panel header="Edit Account" style="width: 360px;">
 
                             <h:panelGrid id="logonPanel" columns="2">
 
-                                <h:outputText value="Name " />
+                                <h:outputText value="Name "  />
 
-                                <p:inputText id="nome" ></p:inputText>
+                                <p:inputText id="nome" value="admin"></p:inputText>
 
                                 <p:spacer></p:spacer>
                             
@@ -48,7 +48,7 @@
 
                                 <h:outputText value="E-Mail: " />
 
-                                <p:inputText id="email" ></p:inputText>
+                                <p:inputText id="email" value="goncalopinto@ua.pt"></p:inputText>
 
                                 <p:spacer></p:spacer>
 
@@ -56,9 +56,9 @@
                                 
 
                                 <p:spacer></p:spacer>
-                                <p:commandButton value="Procceed" update="logonForm" type="button" onclick="PF('msg').show();" ></p:commandButton>
+                                <p:commandButton value="Change Values" update="logonForm" type="button" onclick="PF('msg').show();" ></p:commandButton>
                                 <p:dialog header="Done!" widgetVar="msg" height="150">
-                                    <h:outputText value="Now you may enter in the APP!" />
+                                    <h:outputText value="Now you may go back!" />
                                     <br />
                                     <p:commandButton value="OK" onclick="PF('msg').close();" action="tqs"></p:commandButton>
                                 </p:dialog>

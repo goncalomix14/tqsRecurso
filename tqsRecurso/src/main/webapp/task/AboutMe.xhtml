@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:h="http://java.sun.com/jsf/html"
+       xmlns:f="http://java.sun.com/jsf/core"
+       xmlns:ui="http://java.sun.com/jsf/facelets"
+       xmlns:p="http://primefaces.org/ui">
+    <f:view contentType="text/html">
+    <h:head>
+        <title>About Me</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
+    </h:head>
+        <h:body style="background: url(https://turbinehq.com/wp-content/uploads/2016/06/The-perfect-to-do-list.jpg) repeat !important;"><center>
+           
+            
+
+
+                    <h:form id="AboutMe">
+
+
+                        <p:growl id="msg" showDetail="true" life="3000" />
+                        <p:panel header="About Me" style="width: 360px;">
+
+                            <h:panelGrid id="aboutMePanel" columns="2">
+
+                                <h:outputText value="Contacto: "  />
+
+                                <p:inputText size="40" id="contacto" value="goncalopinto@ua.pt ou 936235665"></p:inputText>
+
+                                <p:spacer></p:spacer>
+                            
+                                <p:message for="contacto" ></p:message>
+
+                                <h:outputText value="Projecto: " />
+
+                                <p:inputText size="40" id="projecto" value="Projecto de Recurso da Cadeira de TQS"></p:inputText>
+
+                                <p:spacer></p:spacer>
+
+                                <p:message for="projecto"></p:message>
+                                
+
+                                <p:spacer></p:spacer>
+                                <p:button value="Return" outcome="tqs" />
+                            </h:panelGrid>
+
+                        </p:panel>
+
+                    </h:form>
+        </center></h:body>
+    </f:view>
+</html>

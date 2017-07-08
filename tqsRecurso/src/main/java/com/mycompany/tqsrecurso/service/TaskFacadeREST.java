@@ -1,3 +1,13 @@
+
+
+
+// Inicialmente a passar para XML
+// De momento a passar para .json
+
+
+
+
+
 package com.mycompany.tqsrecurso.service;
 
 import com.mycompany.tqsrecurso.Task;
